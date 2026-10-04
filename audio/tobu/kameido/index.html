@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>路線1 ｜ neya-sound</title>
-<meta name="description" content="路線1の公開音声。駅別・車両別に分けています。">
+<title>亀戸線 ｜ neya-sound</title>
+<meta name="description" content="東武亀戸線の公開音声。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -210,6 +210,25 @@ p:last-child{margin-bottom:0}
 .clip audio{width:100%;max-width:32rem;height:38px;display:block}
 .note-line{margin:1.4rem 0 0;color:var(--muted);font-size:.9rem}
 
+.notice {
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+}
+.notice p {
+  margin: 0 0 0.6em;
+}
+.notice ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+.notice li {
+  margin-bottom: 0.4em;
+}
+.warning {
+  color: #c62828;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
 </style>
 </head>
 <body>
@@ -218,7 +237,8 @@ p:last-child{margin-bottom:0}
   <div class="wrap">
     <a class="brand" href="../../../index.html">neya-sound</a>
     <nav class="nav" aria-label="サイトメニュー">
-      <a href="../../../about.html">自己紹介</a>
+      <a href="../../../bout.html">自己紹介</a>
+      <a href="../../../notice.html">注意事項</a>
       <a href="../../../audio/index.html">公開音声</a>
       <a href="../../../index.html#news">お知らせ</a>
       <a href="../../../index.html#links">リンク</a>
@@ -229,8 +249,18 @@ p:last-child{margin-bottom:0}
 <main>
   <section class="hero">
     <div class="wrap">
-      <p class="crumbs"><a href="../../../index.html">ホーム</a><span>&gt;</span><a href="../../index.html">公開音声</a><span>&gt;</span><a href="../index.html">鉄道会社A</a><span>&gt;</span>路線1</p>
-      <h1 class="page-title">路線1</h1>
+      <p class="crumbs"><a href="../../../index.html">ホーム</a><span>&gt;</span><a href="../../index.html">公開音声</a><span>&gt;</span><a href="../index.html">東武鉄道</a><span>&gt;</span>亀戸線</p>
+      <h1 class="page-title">亀戸</h1>
+      <div class="notice">
+      <p class="warning">ご視聴の際の注意事項</p>
+      <ul>
+       <li>収録時期の違いにより、現行の放送内容と一部異なる場合があります。</li>
+       <li>現在、発車メロディーの公開は行っておりません。</li>
+       <li>無断での転用、流用を厳に禁じます。</li>
+       <li>音声ファイルへの直リンクはご遠慮ください。</li>
+       <li>その他の注意事項は「注意事項」ページをご一読ください</li>
+  </ul>
+</div>
     </div>
   </section>
 
@@ -240,33 +270,68 @@ p:last-child{margin-bottom:0}
       <!-- ▼ 駅を増やすときは、この <article> をまるごとコピーして増やす ▼
            id="st-01" は、上から順に st-01, st-02, st-03 … と番号を変えていく -->
       <article class="clip" id="st-01">
-        <h3>駅1</h3>
-        <p class="clip-meta">車内自動放送 ／ 2025.01</p>
+        <h3>西新井駅　自動放送</h3>
+        <p class="clip-meta">1番線接近（大師前行） ／ 2018.08</p>
         <!-- ▼ 音声ファイル（mp3）は、この index.html と同じフォルダに置く ▼ -->
-        <audio controls preload="none" src="st-01.mp3"></audio>
+        <audio controls preload="none" src="nishiarai_1_1_daishimae.mp3"></audio>
+        <p class="clip-meta">1番線到着（大師前行） ／ 2018.08</p>
+        <audio controls preload="none" src="nishiarai_1_2_daishimae.mp3"></audio>
+        <p class="clip-meta">1番線発車（Passenger） ／ 2018.08</p>
+        <!-- 
+        非公開ファイル
+        <audio controls preload="none" src="nishiarai_1_3_passenger.mp3"></audio>
+        -->
+        <p class="clip-meta">2番線接近（大師前行） ／ 2022.01</p>
+        <audio controls preload="none" src="nishiarai_2_1_daishimae.mp3"></audio>
+        <p class="clip-meta">2番線到着（大師前行） ／ 2024.03</p>
+        <audio controls preload="none" src="nishiarai_2_2_daishimae.mp3"></audio>
+        <p class="clip-meta">2番線発車（Passenger） ／ 2024.03</p>
+        <!-- 
+        非公開ファイル
+        <audio controls preload="none" src="nishiarai_2_3_passenger.mp3"></audio>
+        -->
       </article>
 
       <article class="clip" id="st-02">
-        <h3>駅2</h3>
-        <p class="clip-meta">駅自動放送 ／ 2025.02</p>
-        <audio controls preload="none" src="st-02.mp3"></audio>
-      </article>
-
-      <article class="clip" id="st-03">
-        <h3>駅3</h3>
-        <p class="clip-meta">駅自動放送 ／ 2025.03</p>
-        <audio controls preload="none" src="st-03.mp3"></audio>
+        <h3>大師前駅　自動放送</h3>
+        <p class="clip-meta">1番線接近（簡易） ／ 2018.08</p>
+        <!-- ▼ 音声ファイル（mp3）は、この index.html と同じフォルダに置く ▼ -->
+        <audio controls preload="none" src="daishimae_1_1.mp3"></audio>
+        <p class="clip-meta">1番線発車（Passenger） ／ 2018.08</p>
+        <!-- 
+        非公開ファイル
+        <audio controls preload="none" src="daishimae_1_2_passenger.mp3"></audio>
+        -->
       </article>
 
       <h2 id="trains" style="margin-top:3.5rem">車両別</h2>
       <!-- ▼ 車両も同じ書き方。id="tr-01" … と番号をふっていく ▼ -->
       <article class="clip" id="tr-01">
-        <h3>車両1</h3>
-        <p class="clip-meta">車内自動放送 ／ 2025.01</p>
-        <audio controls preload="none" src="tr-01.mp3"></audio>
+        <h3>東武8000系　大師前行</h3>
+        <p class="clip-meta">西新井停車中 ／ 2018.08</p>
+        <audio controls preload="none" src="8000\8000_for_daishimae_01.mp3"></audio>
+        <p class="clip-meta">西新井発車前 ／ 2018.08</p>
+        <audio controls preload="none" src="8000\8000_for_daishimae_02.mp3"></audio>
+        <p class="clip-meta">つぎは大師前 ／ 2018.08</p>
+        <audio controls preload="none" src="8000\8000_for_daishimae_03.mp3"></audio>
+        <p class="clip-meta">まもなく大師前 ／ 2018.08</p>
+        <audio controls preload="none" src="8000\8000_for_daishimae_04.mp3"></audio>
+        
       </article>
 
-      <p class="note-line">音声が増えてきたら、駅ごとに別ページ（<code>stations/station-1.html</code> など）に切り出してもOKです。</p>
+       <article class="clip" id="tr-01">
+        <h3>東武8000系　西新井行</h3>
+        <p class="clip-meta">大師前停車中 ／ 2018.08</p>
+        <audio controls preload="none" src="8000\8000_for_nishiarai_01.mp3"></audio>
+        <p class="clip-meta">大師前発車前 ／ 2018.08</p>
+        <audio controls preload="none" src="8000\8000_for_nishiarai_02.mp3"></audio>
+        <p class="clip-meta">つぎは西新井 ／ 2018.08</p>
+        <audio controls preload="none" src="8000\8000_for_nishiarai_03.mp3"></audio>
+        <p class="clip-meta">まもなく西新井 ／ 2018.08</p>
+        <audio controls preload="none" src="8000\8000_for_nishiarai_04.mp3"></audio>
+        
+      </article>
+
     </div>
   </section>
 
@@ -274,7 +339,7 @@ p:last-child{margin-bottom:0}
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© 2025 neya-sound</span>
+    <span>© 2026 neya-sound</span>
     <span class="mono">published with GitHub Pages</span>
   </div>
 </footer>
