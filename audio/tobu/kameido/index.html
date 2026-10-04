@@ -229,6 +229,31 @@ p:last-child{margin-bottom:0}
   font-weight: 700;
   font-size: 1.05rem;
 }
+  
+/* ---- 折りたたみ（details / summary） ---- */
+.fold-hint{margin:0 0 1.2rem;font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:.5rem}
+.fold-hint .arrow{font-family:"Space Mono",monospace;color:var(--accent)}
+.fold{border-top:1px solid var(--line)}
+.fold:last-of-type{border-bottom:1px solid var(--line)}
+.fold summary{
+  cursor:pointer;list-style:none;
+  padding:1.15rem 0;
+  display:flex;align-items:baseline;gap:1rem;
+  font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  font-size:1.1rem;font-weight:600;line-height:1.5;
+  transition:color .2s ease;
+}
+.fold summary::-webkit-details-marker{display:none}
+.fold summary:hover{color:var(--accent)}
+.fold summary::after{
+  content:"＋";
+  margin-left:auto;flex:none;
+  font-family:"Space Mono",monospace;font-size:.95rem;
+  color:var(--accent);
+}
+.fold[open] summary::after{content:"－"}
+.fold-body{padding:0 0 1.2rem}
+  
 </style>
 </head>
 <body>
@@ -270,19 +295,32 @@ p:last-child{margin-bottom:0}
       <!-- ▼ 駅を増やすときは、この <article> をまるごとコピーして増やす ▼
            id="st-01" は、上から順に st-01, st-02, st-03 … と番号を変えていく -->
       <article class="clip" id="st-01">
-
-        <h3>曳舟駅（亀戸線）　自動放送（2019年収録）</h3>
+        <h3>曳舟駅（亀戸線）</h3>
+        <p class="fold-hint"><span class="arrow">▼</span>見出しをクリックすると、中の音声が展開されます。</p>
+        <details class="fold" open>
+        <summary>自動放送（2019年収録）</summary>
+        <div class="fold-body">
+          <article class="clip">
         <p class="clip-meta">5番線ワンマン運転案内（亀戸行） ／ 2019.07</p>
         <audio controls preload="none" src="stations/hikihune/hikihune_5_0-20190720.mp3"></audio>
+            </article>
+          <article class="clip">
         <p class="clip-meta">5番線接近（亀戸行） ／ 2019.07</p>
         <audio controls preload="none" src="stations/hikihune/hikihune_5_1_kameido-201907.mp3"></audio>
+            </article>
+          <article class="clip">
         <p class="clip-meta">5番線到着（亀戸行） ／ 2019.07</p>
         <audio controls preload="none" src="stations/hikihune/hikihune_5_2_kameido-201907.mp3"></audio>
+            </article>
+          <article class="clip">
         <p class="clip-meta">5番線発車（Passenger） ／ 2019.07</p>
         <!-- 
         非公開ファイル
         <audio controls preload="none" src="stations/hikihune/hikihune_5_3_kameido-201907.mp3"></audio>
         -->
+            </article>
+          </div>
+        </details>
         
         <h3>曳舟駅（亀戸線）　自動放送（2018年収録）</h3>
         <p class="clip-meta">4番線接近（亀戸行） ／ 2018.05</p>
