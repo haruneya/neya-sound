@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大師線 ｜ neya-sound</title>
+<meta name="description" content="東武大師線の公開音声。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f0f2ef;
+  --surface:#ffffff;
+  --ink:#12181a;
+  --muted:#5b6663;
+  --accent:#0d6e5a;
+  --accent-2:#c2622a;
+  --deep:#12181a;
+  --line:color-mix(in oklab, var(--ink) 13%, transparent);
+  --accent-weak:color-mix(in oklab, var(--accent) 9%, var(--surface));
+
+  --step-0:clamp(1rem, 0.96rem + 0.25vw, 1.0625rem);
+  --step-1:clamp(1.2rem, 1.1rem + 0.6vw, 1.45rem);
+  --step-2:clamp(1.5rem, 1.3rem + 1.1vw, 2.1rem);
+  --step-3:clamp(2.4rem, 1.6rem + 4.2vw, 4.6rem);
+
+  --space:clamp(1rem, 0.8rem + 1vw, 1.6rem);
+  --gutter:clamp(1.25rem, 0.6rem + 4vw, 4rem);
+  --radius:16px;
+  --shadow:0 1px 2px rgba(18,24,26,.04), 0 10px 30px -16px rgba(18,24,26,.25);
+  --wrap:68rem;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
+  font-size:var(--step-0);
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+a{color:var(--accent);text-underline-offset:.22em;text-decoration-thickness:1px}
+a:hover{color:color-mix(in oklab, var(--accent) 70%, var(--ink))}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+.eyebrow{
+  font-family:"Space Mono",ui-monospace,monospace;
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 .9rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+h1,h2,h3{
+  font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  font-feature-settings:"palt";
+  line-height:1.35;
+  margin:0;
+}
+h2{font-size:var(--step-2);font-weight:600;letter-spacing:-.01em}
+h3{font-size:var(--step-1);font-weight:600}
+p{margin:0 0 1em}
+p:last-child{margin-bottom:0}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:20;
+  background:color-mix(in oklab, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px}
+.brand{
+  font-family:"Shippori Mincho",serif;font-weight:600;font-size:1.05rem;
+  letter-spacing:.08em;color:var(--ink);text-decoration:none;
+}
+.brand:hover{color:var(--accent)}
+.nav{display:flex;gap:clamp(.9rem,3vw,1.8rem);font-size:.85rem}
+.nav a{color:var(--muted);text-decoration:none;letter-spacing:.06em}
+.nav a:hover{color:var(--accent)}
+.nav a[aria-current="page"]{color:var(--accent);font-weight:700}
+@media (max-width:560px){
+  .site-header .wrap{flex-wrap:wrap;row-gap:.15rem;padding-block:.45rem}
+  .nav{flex-wrap:wrap;gap:.6rem 1rem;font-size:.78rem}
+}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(3rem,8vw,6.5rem) 0 clamp(1.5rem,4vw,2.5rem)}
+.hero h1{
+  font-size:var(--step-3);font-weight:600;letter-spacing:.02em;
+  line-height:1.05;margin:0 0 1.1rem;
+}
+.hero h1 .dash{color:var(--accent-2)}
+.lede{max-width:34rem;color:var(--muted);font-size:1.05rem}
+.hero-meta{
+  font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);margin-top:1.6rem;
+  display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;
+}
+.hero-meta span{display:inline-flex;align-items:center;gap:.45rem}
+
+/* ---------- signature: signal strip ---------- */
+.signal{
+  border-block:1px solid var(--line);
+  background:linear-gradient(180deg, var(--surface), var(--accent-weak));
+  padding-block:clamp(1.1rem,3vw,1.8rem);
+  overflow:hidden;
+}
+.signal .wave{display:block;width:100%;height:clamp(64px,11vw,132px)}
+.wave g line{stroke:var(--accent);stroke-width:3.2;stroke-linecap:round;opacity:.85}
+.wave g line:nth-child(5n+2){stroke:var(--accent-2);opacity:.7}
+@media (prefers-reduced-motion:no-preference){
+  .signal .wave{animation:breathe 9s ease-in-out infinite}
+  @keyframes breathe{0%,100%{opacity:.92;transform:translateY(0)}50%{opacity:1;transform:translateY(-4px)}}
+}
+
+/* ---------- sections ---------- */
+.section{padding:clamp(3rem,7vw,5.5rem) 0;border-bottom:1px solid var(--line)}
+.section:last-of-type{border-bottom:0}
+.section-head{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.section-head .eyebrow{margin:0}
+.mini{width:64px;height:20px;flex:none}
+.mini g line{stroke:var(--accent-2);stroke-width:2.2;stroke-linecap:round;opacity:.8}
+.grid{display:grid;gap:clamp(1.2rem,3vw,2.2rem)}
+@media (min-width:760px){.grid.two{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}}
+
+/* works list */
+.entries{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.entries li{
+  padding:1.25rem 0;border-top:1px solid var(--line);
+  display:grid;gap:.2rem 1.5rem;align-items:baseline;
+}
+@media (min-width:700px){.entries li{grid-template-columns:3.5rem minmax(0,1fr)}}
+.entries .mini{width:56px;height:24px}
+.entries .mini g line{stroke:var(--accent);stroke-width:2.4}
+.entries .when{
+  font-family:"Space Mono",monospace;font-size:.75rem;letter-spacing:.1em;color:var(--accent);
+}
+.entries .what strong{display:block;font-family:"Shippori Mincho",serif;font-weight:600;font-size:1.05rem;line-height:1.6}
+.entries .what span{color:var(--muted);font-size:.92rem}
+
+/* news */
+.news{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.news li{padding:.85rem 0;border-bottom:1px solid var(--line);display:flex;gap:1.1rem;align-items:baseline;flex-wrap:wrap}
+.news time{font-family:"Space Mono",monospace;font-size:.75rem;letter-spacing:.08em;color:var(--muted);flex:none}
+.news p{margin:0}
+
+/* ---------- dark band: links ---------- */
+.band{background:var(--deep);color:#eef1ef;padding:clamp(3rem,7vw,5rem) 0}
+.band h2{color:#fff}
+.band .eyebrow{color:color-mix(in oklab, var(--accent) 55%, #ffffff)}
+.band .mini g line{stroke:color-mix(in oklab, var(--accent) 45%, #ffffff);opacity:.9}
+.band p{color:#b9c2be}
+.linklist{list-style:none;margin:1.8rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.7rem}
+.linklist a{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.6rem 1.15rem;border:1px solid rgba(255,255,255,.22);border-radius:999px;
+  color:#eef1ef;text-decoration:none;font-size:.9rem;letter-spacing:.04em;
+  transition:background-color .2s ease,border-color .2s ease,transform .2s ease;
+}
+.linklist a:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5);transform:translateY(-2px);color:#fff}
+.linklist .k{font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:color-mix(in oklab, var(--accent) 40%, #ffffff)}
+
+.site-footer{background:var(--deep);color:#8b9691;border-top:1px solid rgba(255,255,255,.12);padding:1.6rem 0}
+.site-footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.78rem;letter-spacing:.05em}
+.site-footer .mono{font-family:"Space Mono",monospace;letter-spacing:.1em}
+
+/* ---------- load-in ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .hero .eyebrow,.hero h1,.hero .lede,.hero-meta{animation:rise .7s cubic-bezier(.22,.7,.2,1) both}
+  .hero h1{animation-delay:.06s}
+  .hero .lede{animation-delay:.14s}
+  .hero-meta{animation-delay:.22s}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+
+.hero-link{margin-top:1.5rem;font-size:.9rem;letter-spacing:.04em}
+.hero-link a{text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px}
+
+@media print{
+  body{background:#fff}
+  .site-header{position:static;background:#fff}
+  .band,.site-footer{background:#fff;color:#000;border-color:#ccc}
+  .band h2,.band p,.linklist a,.site-footer .mono{color:#000}
+  .linklist a{border-color:#999}
+  .no-print{display:none}
+}
+@page{size:A4;margin:18mm}
+.page-title{font-size:clamp(1.9rem,1.5rem + 2.4vw,3rem);font-weight:600;letter-spacing:.02em;line-height:1.2;margin:0}
+
+/* ---------- 公開音声ページ用（このページだけに足したもの） ---------- */
+.crumbs{font-size:.78rem;color:var(--muted);margin:0 0 1.3rem;letter-spacing:.04em}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--accent)}
+.crumbs span{opacity:.45;padding-inline:.45rem}
+.tree{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.tree li{padding:.95rem 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;align-items:baseline;flex-wrap:wrap}
+.tree a{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:1.05rem;font-weight:600;text-decoration:none}
+.tree .count{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.1em;color:var(--muted)}
+.clip{padding:1.5rem 0;border-top:1px solid var(--line)}
+.clip:first-of-type{border-top:0}
+.clip h3{margin:0 0 .25rem}
+.clip-meta{margin:0 0 .8rem;font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.clip audio{width:100%;max-width:32rem;height:38px;display:block}
+.note-line{margin:1.4rem 0 0;color:var(--muted);font-size:.9rem}
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../../index.html">neya-sound</a>
+    <nav class="nav" aria-label="サイトメニュー">
+      <a href="../../../about.html">自己紹介</a>
+      <a href="../../../audio/index.html">公開音声</a>
+      <a href="../../../index.html#news">お知らせ</a>
+      <a href="../../../index.html#links">リンク</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="../../../index.html">ホーム</a><span>&gt;</span><a href="../../index.html">公開音声</a><span>&gt;</span><a href="../index.html">東武鉄道</a><span>&gt;</span>大師線</p>
+      <h1 class="page-title">大師線</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 id="stations">駅別</h2>
+      <!-- ▼ 駅を増やすときは、この <article> をまるごとコピーして増やす ▼
+           id="st-01" は、上から順に st-01, st-02, st-03 … と番号を変えていく -->
+      <article class="clip" id="st-01">
+        <h3>西新井駅</h3>
+        <p class="clip-meta">車内自動放送 ／ 2025.01</p>
+        <!-- ▼ 音声ファイル（mp3）は、この index.html と同じフォルダに置く ▼ -->
+        <audio controls preload="none" src="st-01.mp3"></audio>
+      </article>
+
+      <article class="clip" id="st-02">
+        <h3>大師前駅</h3>
+        <p class="clip-meta">駅自動放送 ／ 2025.02</p>
+        <audio controls preload="none" src="st-02.mp3"></audio>
+      </article>
+
+      <h2 id="trains" style="margin-top:3.5rem">車両別</h2>
+      <!-- ▼ 車両も同じ書き方。id="tr-01" … と番号をふっていく ▼ -->
+      <article class="clip" id="tr-01">
+        <h3>車両1</h3>
+        <p class="clip-meta">車内自動放送 ／ 2025.01</p>
+        <audio controls preload="none" src="tr-01.mp3"></audio>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2025 neya-sound</span>
+    <span class="mono">published with GitHub Pages</span>
+  </div>
+</footer>
+
+</body>
+</html>
