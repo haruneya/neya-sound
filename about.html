@@ -86,7 +86,11 @@ p:last-child{margin-bottom:0}
 .nav{display:flex;gap:clamp(.9rem,3vw,1.8rem);font-size:.85rem}
 .nav a{color:var(--muted);text-decoration:none;letter-spacing:.06em}
 .nav a:hover{color:var(--accent)}
-@media (max-width:520px){.nav{display:none}}
+.nav a[aria-current="page"]{color:var(--accent);font-weight:700}
+@media (max-width:560px){
+  .site-header .wrap{flex-wrap:wrap;row-gap:.15rem;padding-block:.45rem}
+  .nav{flex-wrap:wrap;gap:.6rem 1rem;font-size:.78rem}
+}
 
 /* ---------- hero ---------- */
 .hero{padding:clamp(3rem,8vw,6.5rem) 0 clamp(1.5rem,4vw,2.5rem)}
@@ -134,9 +138,7 @@ p:last-child{margin-bottom:0}
   padding:1.25rem 0;border-top:1px solid var(--line);
   display:grid;gap:.2rem 1.5rem;align-items:baseline;
 }
-@media (min-width:700px){.entries li{grid-template-columns:3.5rem minmax(0,1fr)}}
-.entries .mini{width:56px;height:24px}
-.entries .mini g line{stroke:var(--accent);stroke-width:2.4}
+@media (min-width:700px){.entries li{grid-template-columns:7rem minmax(0,1fr)}}
 .entries .when{
   font-family:"Space Mono",monospace;font-size:.75rem;letter-spacing:.1em;color:var(--accent);
 }
@@ -187,25 +189,6 @@ p:last-child{margin-bottom:0}
   .no-print{display:none}
 }
 @page{size:A4;margin:18mm}
-
-/* ---------- about page ---------- */
-.page-title{font-size:clamp(2rem,1.5rem + 3vw,3.4rem);font-weight:600;letter-spacing:.02em;line-height:1.15;margin:0 0 1rem}
-.profile{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.profile li{padding:1rem 0;border-bottom:1px solid var(--line);display:grid;gap:.15rem 1.6rem}
-@media (min-width:640px){.profile li{grid-template-columns:9rem minmax(0,1fr)}}
-.profile .term{
-  font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--accent);padding-top:.35rem;
-}
-.profile .val{font-size:1.02rem}
-.profile .val strong{font-family:"Shippori Mincho",serif;font-weight:600}
-.note{
-  margin:2rem 0 0;padding:1.1rem 1.3rem;border-left:3px solid var(--accent-2);
-  background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;
-  color:var(--muted);font-size:.92rem;box-shadow:var(--shadow);
-}
-.backlink{display:inline-block;margin-top:1.6rem;font-size:.9rem;text-decoration:none;letter-spacing:.04em}
-.backlink:hover{text-decoration:underline}
 </style>
 </head>
 <body>
