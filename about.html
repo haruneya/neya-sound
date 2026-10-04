@@ -189,6 +189,17 @@ p:last-child{margin-bottom:0}
   .no-print{display:none}
 }
 @page{size:A4;margin:18mm}
+
+  .profile{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.profile li{padding:1rem 0;border-bottom:1px solid var(--line);display:grid;gap:.15rem 1.6rem}
+@media (min-width:640px){.profile li{grid-template-columns:9rem minmax(0,1fr)}}
+.profile .term{
+  font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);padding-top:.35rem;
+}
+.profile .val{font-size:1.02rem}
+.profile .val strong{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-weight:600}
+  
 </style>
 </head>
 <body>
@@ -231,12 +242,12 @@ p:last-child{margin-bottom:0}
       </div>
       <div>
         <!-- ▼▼ 1行ずつ書き換えてください。不要な行は <li>〜</li> ごと削除 ▼▼ -->
-        <ul class="profile">
-          <li><span class="term">name</span><span class="val"><strong>はるねや（閨、HaruNeya、寝屋川etc…）</strong></span></li>
-          <li><span class="term">doing</span><span class="val">駅、車内自動放送の収録、整理、公開</span></li>
-          <li><span class="term">since</span><span class="val">2013年？（この趣味を始めた年）</span></li>
-          <li><span class="term">contact</span><span class="val">XのDMでお願いします</span></li>
-        </ul>
+<ul class="profile">
+  <li><span class="term">name</span><span class="val"><strong>はるねや（闘、HaruNeya、寝屋川etc...）</strong></span></li>
+  <li><span class="term">doing</span><span class="val">駅、車内自動放送の収録、整理、公開</span></li>
+  <li><span class="term">since</span><span class="val">2013年（この趣味を始めた年）</span></li>
+  <li><span class="term">contact</span><span class="val">XのDMでお願いします</span></li>
+</ul>
       </div>
     </div>
   </section>
