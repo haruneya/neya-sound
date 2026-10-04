@@ -270,26 +270,23 @@ p:last-child{margin-bottom:0}
       <!-- ▼ 駅を増やすときは、この <article> をまるごとコピーして増やす ▼
            id="st-01" は、上から順に st-01, st-02, st-03 … と番号を変えていく -->
       <article class="clip" id="st-01">
-        <h3>西新井駅　自動放送</h3>
-        <p class="clip-meta">1番線接近（大師前行） ／ 2018.08</p>
-        <!-- ▼ 音声ファイル（mp3）は、この index.html と同じフォルダに置く ▼ -->
-        <audio controls preload="none" src="nishiarai_1_1_daishimae.mp3"></audio>
-        <p class="clip-meta">1番線到着（大師前行） ／ 2018.08</p>
-        <audio controls preload="none" src="nishiarai_1_2_daishimae.mp3"></audio>
-        <p class="clip-meta">1番線発車（Passenger） ／ 2018.08</p>
+        <h3>曳舟駅（亀戸線）　自動放送</h3>
+        <p class="clip-meta">4番線接近（亀戸行） ／ 2018.05</p>
+        <audio controls preload="none" src="stations/hikihune/hikihune_4_1_kameido.mp3"></audio>
+        <p class="clip-meta">4番線到着（亀戸行） ／ 2018.05</p>
+        <audio controls preload="none" src="stations/hikihune/hikihune_4_2_kameido.mp3"></audio>
+        <p class="clip-meta">5番線ワンマン運転案内（亀戸行） ／ 2018.05</p>
+        <audio controls preload="none" src="stations/hikihune/hikihune_5_0.mp3"></audio>
+        <p class="clip-meta">5番線接近（亀戸行） ／ 2018.05</p>
+        <audio controls preload="none" src="stations/hikihune/hikihune_5_1_kameido.mp3"></audio>
+        <p class="clip-meta">5番線到着（亀戸行） ／ 2018.05</p>
+        <audio controls preload="none" src="stations/hikihune/hikihune_5_2_kameido.mp3"></audio>
+        <p class="clip-meta">5番線発車（Passenger） ／ 2018.05</p>
         <!-- 
         非公開ファイル
-        <audio controls preload="none" src="nishiarai_1_3_passenger.mp3"></audio>
+        <audio controls preload="none" src="stations/hikihune/hkihune_5_3_kameido.mp3"></audio>
         -->
-        <p class="clip-meta">2番線接近（大師前行） ／ 2022.01</p>
-        <audio controls preload="none" src="nishiarai_2_1_daishimae.mp3"></audio>
-        <p class="clip-meta">2番線到着（大師前行） ／ 2024.03</p>
-        <audio controls preload="none" src="nishiarai_2_2_daishimae.mp3"></audio>
-        <p class="clip-meta">2番線発車（Passenger） ／ 2024.03</p>
-        <!-- 
-        非公開ファイル
-        <audio controls preload="none" src="nishiarai_2_3_passenger.mp3"></audio>
-        -->
+        
       </article>
 
       <article class="clip" id="st-02">
@@ -306,6 +303,7 @@ p:last-child{margin-bottom:0}
 
       <h2 id="trains" style="margin-top:3.5rem">車両別</h2>
       <!-- ▼ 車両も同じ書き方。id="tr-01" … と番号をふっていく ▼ -->
+      <!-- 公開するならここを消す　▼ まだ手つかずなので非公開 ▼ 
       <article class="clip" id="tr-01">
         <h3>東武8000系　大師前行</h3>
         <p class="clip-meta">西新井停車中 ／ 2018.08</p>
@@ -329,7 +327,8 @@ p:last-child{margin-bottom:0}
         <audio controls preload="none" src="8000\8000_for_nishiarai_03.mp3"></audio>
         <p class="clip-meta">まもなく西新井 ／ 2018.08</p>
         <audio controls preload="none" src="8000\8000_for_nishiarai_04.mp3"></audio>
-        
+
+      　公開するならここを消す-->
       </article>
 
     </div>
