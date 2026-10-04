@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ご視聴・ご利用にあたって ｜ neya-sound</title>
+<meta name="description" content="neya-sound のご利用上の注意・免責事項です。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f0f2ef;
+  --surface:#ffffff;
+  --ink:#12181a;
+  --muted:#5b6663;
+  --accent:#0d6e5a;
+  --accent-2:#c2622a;
+  --deep:#12181a;
+  --line:color-mix(in oklab, var(--ink) 13%, transparent);
+  --accent-weak:color-mix(in oklab, var(--accent) 9%, var(--surface));
+  --step-0:clamp(1rem, 0.96rem + 0.25vw, 1.0625rem);
+  --step-1:clamp(1.2rem, 1.1rem + 0.6vw, 1.45rem);
+  --step-2:clamp(1.5rem, 1.3rem + 1.1vw, 2.1rem);
+  --step-3:clamp(2.4rem, 1.6rem + 4.2vw, 4.6rem);
+  --radius:16px;
+  --wrap:68rem;
+  --gutter:clamp(1.25rem, 0.6rem + 4vw, 4rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
+  font-size:var(--step-0);line-height:1.9;
+}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+a{color:var(--accent);text-underline-offset:.22em}
+a:hover{color:color-mix(in oklab, var(--accent) 70%, var(--ink))}
+
+/* ヘッダー */
+.site-header{
+  position:sticky;top:0;z-index:20;
+  background:color-mix(in oklab, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px}
+.brand{font-family:"Shippori Mincho",serif;font-weight:600;font-size:1.05rem;letter-spacing:.08em;color:var(--ink);text-decoration:none}
+.nav{display:flex;gap:clamp(.9rem,3vw,1.8rem);font-size:.85rem}
+.nav a{color:var(--muted);text-decoration:none}
+.nav a:hover{color:var(--accent)}
+.nav a[aria-current="page"]{color:var(--accent);font-weight:700}
+@media (max-width:560px){
+  .site-header .wrap{flex-wrap:wrap;row-gap:.15rem;padding-block:.45rem}
+  .nav{flex-wrap:wrap;gap:.6rem 1rem;font-size:.78rem}
+}
+
+/* ページタイトル */
+.hero{padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(1.5rem,3vw,2.5rem)}
+.page-title{
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.9rem,1.5rem + 2.4vw,3rem);
+  font-weight:600;line-height:1.2;margin:0 0 .8rem;
+}
+.eyebrow{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 .9rem}
+
+/* セクション */
+.section{padding:clamp(2.5rem,5vw,4.5rem) 0;border-top:1px solid var(--line)}
+h2{
+  font-family:"Shippori Mincho",serif;
+  font-size:var(--step-2);font-weight:600;line-height:1.35;margin:0 0 1.2rem;
+}
+
+/* 注意書きボックス */
+.alert-box{
+  background:#fff;
+  border-left:4px solid #c62828;
+  padding:1.4rem 1.6rem;
+  border-radius:0 12px 12px 0;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  margin-bottom:1.8rem;
+}
+.alert-title{
+  color:#c62828;
+  font-weight:700;
+  font-size:1.05rem;
+  margin:0 0 .5rem;
+}
+.alert-text{
+  margin:0;
+  line-height:1.75;
+}
+
+/* フッター */
+.site-footer{background:var(--deep);color:#8b9691;border-top:1px solid rgba(255,255,255,.12);padding:1.6rem 0}
+.site-footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.78rem}
+.site-footer .mono{font-family:"Space Mono",monospace}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">neya-sound</a>
+    <nav class="nav" aria-label="サイトメニュー">
+      <a href="about.html">自己紹介</a>
+      <a href="audio/index.html">公開音声</a>
+      <a href="notice.html" aria-current="page">注意事項</a>
+      <a href="index.html#links">リンク</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">attention</p>
+      <h1 class="page-title">ご視聴・ご利用にあたって</h1>
+      <p style="color:var(--muted);margin:0;">当サイトをご利用いただく前に、以下の内容を必ずご確認ください。</p>
+    </div>
+  </section>
+
+  <!-- 1. 運営と免責事項 -->
+  <section class="section">
+    <div class="wrap">
+      <h2>鉄道事業者等との関係・お問い合わせについて</h2>
+      <p>当サイトは、個人が趣味で運営しています。</p>
+      <p>掲載している音声や情報は、<strong>鉄道事業者、企業、行政機関、法人、および団体等とは一切関係がございません。</strong></p>
+      
+      <div class="alert-box">
+        <p class="alert-title">【重要】鉄道事業者等へのお問い合わせは厳禁です</p>
+        <p class="alert-text">当サイトに関するお問い合わせや、掲載内容についての質問等を、<strong>各鉄道会社や駅係員、関係機関等へ行うことは絶対におやめください。</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 音声ファイルの取り扱い -->
+  <section class="section">
+    <div class="wrap">
+      <h2>音声ファイルの取り扱いについて</h2>
+      <div class="alert-box">
+        <p class="alert-title">無断転載・再配布の禁止</p>
+        <p class="alert-text">当サイト内で公開しているすべての音声ファイルを<strong>無断転載・無断配布・無断使用する事は絶対におやめください。</strong></p>
+      </div>
+
+      <p>以下のような行為は固くお断りいたします。</p>
+      <ul style="line-height:1.8;padding-left:1.3em;">
+        <li>YouTube、TikTok、X（旧Twitter）等のSNS・動画共有サイトへの無断使用（BGMや動画素材としての利用を含む）</li>
+        <li>音素材としての再配布、加工した上での再公開</li>
+        <li>音声ファイルへの直リンク（直接リンク）行為</li>
+      </ul>
+
+      <p style="margin-top:1.5rem;">当サイトの音声は、<strong>個人での鑑賞目的のみ</strong>でお楽しみいただくようお願いいたします。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2025 neya-sound</span>
+    <span class="mono">published with GitHub Pages</span>
+  </div>
+</footer>
+
+</body>
+</html>
